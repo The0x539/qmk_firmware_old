@@ -62,6 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
+    clockwise = !clockwise; // my rotary encoder's pinout is backwards
     if (clockwise) {
       tap_code(KC_VOLU);
     } else {
