@@ -2,3 +2,5 @@
 #undef LOCKING_RESYNC_ENABLE
 #undef NO_ACTION_ONESHOT
 #undef NO_ACTION_TAPPING
+
+#include "no_rgb.h"
