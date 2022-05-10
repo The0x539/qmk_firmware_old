@@ -3,4 +3,3 @@
 #undef NO_ACTION_ONESHOT
 #undef NO_ACTION_TAPPING
 
-#include "no_rgb.h"
