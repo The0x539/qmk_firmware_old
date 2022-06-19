@@ -100,12 +100,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     uint8_t mods = get_mods();
     
     if (layer_state_is(EMOD)) {
-        uint16_t k = clockwise ? KC_DOWN : KC_UP;
-        uint8_t n = mods & MOD_MASK_ALT ? 12 : 1;
-        unregister_mods(MOD_MASK_ALT);
-        for (uint8_t i = 0; i < n; i++) {
-            tap_code(k);
-        }
+        register_mods(MOD_MASK_ALT | MOD_MASK_SHIFT);
+        tap_code (clockwise ? KC_KP_MINUS : KC_KP_PLUS);
         set_mods(mods);
     } else if (mods & (MOD_MASK_CTRL | MOD_MASK_ALT)) {
         if (!clockwise) {
